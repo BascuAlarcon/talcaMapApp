@@ -1,0 +1,53 @@
+ 
+ 
+body{
+    background-image: url('C:/Users/Bascu/Desktop/Proy/PREVIA/000_FONDO.jpg');
+    background-size: unset; 
+    width: 100%;
+    height: 100%;  
+} 
+  
+#vid0, #vid1, #vid2, #vid3, #vid4{
+    width: 200px; 
+    margin: 0;
+    padding: 0;  
+}
+
+#vid0{
+    transform: rotate(210deg);  
+    position: absolute;
+    top: 2300px;
+    left: 500px; 
+    z-index: 0; 
+}
+
+#vid1{
+    transform: rotate(210deg);  
+    position: absolute;
+    top: 1300px;
+    left: 500px;
+    z-index: 0;  
+}
+
+#vid2{
+    transform: rotate(210deg);  
+    position: absolute;
+    top: 1300px;
+    left: 1000px;
+    z-index: 0;  
+}  
+
+#vid3{
+    transform: rotate(-40deg);
+    position: absolute;
+    top: 380px;
+    left: 200px;
+    z-index: 0;
+}
+
+#vid4{
+    transform: rotate(-40deg);
+    position: absolute;
+    top: 400px;
+    left: 200px;
+} 
