@@ -8,17 +8,19 @@
     <title>Test</title>
 </head>
 <body id="body">   
-  <div id="backgr">
+  <div id="backgr"> 
     <video id="vid0" autoplay muted loop onclick="goFullscreen('vid0'); return false" class="videos">
       <source src="PREVIA/001.mp4" type="video/mp4">
       <source src="PREVIA/001.ogg" type="video/ogg">
       Your browser does not support the video tag.
-    </video>
+    </video> 
+
     <video id="vid1"  autoplay muted loop onclick="goFullscreen('vid1'); return false" class="videos">
       <source src="PREVIA/001.mp4" type="video/mp4">
       <source src="PREVIA/001.ogg" type="video/ogg">
       Your browser does not support the video tag.
     </video>
+  
     <video id="vid2"  autoplay muted loop onclick="goFullscreen('vid2'); return false" class="videos">
       <source src="PREVIA/001.mp4" type="video/mp4">
       <source src="PREVIA/001.ogg" type="video/ogg">
@@ -35,13 +37,15 @@
       <source src="PREVIA/004.mp4" type="video/mp4">
       <source src="PREVIA/004.ogg" type="video/ogg">
       Your browser does not support the video tag.
-    </video>  
-  </div> 
+    </video>   
+
+   </div> 
 </body>
 
 <script>
 
   // create the multimensional array
+  var countVideos = 5;
   var dimensions = new Array(2);
   dimensions[0] = new Array(10);
   dimensions[1] = new Array(10);
@@ -57,6 +61,7 @@
     var element = document.getElementById(id);       
     var element2 = document.getElementById('body');    
     var element3 = document.getElementsByClassName('videos');   
+
     
     if (element.style.width == '50%') {
       element.style.width = '200px';
@@ -88,13 +93,15 @@
       element2.style.backgroundImage = 'none';      
       element2.style.backgroundColor = 'black';   
       
+
+
       disableAllVideos(id);
     }  
   }   
   
   // disable all videos except the one that user click
   function disableAllVideos(idToKeepShowing){ 
-    for (let index = 0; index < 5; index++) {
+    for (let index = 0; index < countVideos; index++) {
       var element = document.getElementById("vid"+index);   
       if (element.id != idToKeepShowing) {
         element.style.display = "none"; 
@@ -104,7 +111,7 @@
 
   // enable all videos 
   function enableAllVideos(idToKeepShowing){ 
-    for (let index = 0; index < 5; index++) {
+    for (let index = 0; index < countVideos; index++) {
       var element = document.getElementById("vid"+index);   
       if (element.id != idToKeepShowing) {
         element.style.display = "inline"; 
@@ -114,7 +121,7 @@
 
   function saveDimentions(){
 
-    for (let index = 0; index < 5; index++) {
+    for (let index = 0; index < countVideos; index++) {
       for (let index2 = 0; index2 < 2; index2++) {
         // get the video id 
         var element = document.getElementById("vid"+index);  
@@ -144,7 +151,7 @@
 
   // get all dimension (purpose only to development)
   function getDimensions(){
-    for(var i=0; i<5; i++) { 
+    for(var i=0; i<countVideos; i++) { 
       for(var j=0; j<2; j++) {
          console.log(dimensions[j][i]);
       }
