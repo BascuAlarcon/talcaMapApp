@@ -9,25 +9,25 @@
 </head>
 <body id="body">   
   <div id="backgr"> 
-    <video id="vid0" autoplay muted loop onclick="goFullscreen('vid0'); return false" class="videos">
+    <video id="vid0" class="smallVideo" autoplay muted loop onclick="goFullscreen('vid0'); return false" class="videos">
       <source src="PREVIA/001.mp4" type="video/mp4">
       <source src="PREVIA/001.ogg" type="video/ogg">
       Your browser does not support the video tag.
     </video> 
 
-    <video id="vid1"  autoplay muted loop onclick="goFullscreen('vid1'); return false" class="videos">
+    <video id="vid1" class="smallVideo" autoplay muted loop onclick="goFullscreen('vid1'); return false" class="videos">
       <source src="PREVIA/001.mp4" type="video/mp4">
       <source src="PREVIA/001.ogg" type="video/ogg">
       Your browser does not support the video tag.
     </video>
   
-    <video id="vid2"  autoplay muted loop onclick="goFullscreen('vid2'); return false" class="videos">
+    <video id="vid2" class="largeVideo" autoplay muted loop onclick="goFullscreen('vid2'); return false" class="videos">
       <source src="PREVIA/001.mp4" type="video/mp4">
       <source src="PREVIA/001.ogg" type="video/ogg">
       Your browser does not support the video tag.
     </video> 
 
-    <video id="vid3"   autoplay muted loop onclick="goFullscreen('vid3'); return false" class="videos"> 
+    <video id="vid3" class="largeVideo" autoplay muted loop onclick="goFullscreen('vid3'); return false" class="videos"> 
       <source src="PREVIA/003.mp4" type="video/mp4">
       <source src="PREVIA/003.ogg" type="video/ogg">
       Your browser does not support the video tag.
@@ -61,10 +61,17 @@
     var element = document.getElementById(id);       
     var element2 = document.getElementById('body');    
     var element3 = document.getElementsByClassName('videos');   
-
-    
+  
     if (element.style.width == '50%') {
-      element.style.width = '200px';
+      
+      //
+      if(element.className === "smallVideo"){
+        element.style.width = '150px';  
+      }else{
+        element.style.width = '250px';  
+      }
+
+      //
       element.style.position = 'absolute'; 
       element2.style.backgroundImage = "url('C:/Users/Bascu/Desktop/Proy/PREVIA/000_FONDO.jpg')";      
 
